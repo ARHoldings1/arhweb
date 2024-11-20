@@ -1,0 +1,751 @@
+:root {
+    --primary-color: #0a0a0a;
+    --accent-color: #00f0ff;
+    --secondary-accent: #ff3366;
+    --text-color: #ffffff;
+    --background-color: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 90px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.1;
+    animation: pulse 8s infinite;
+}
+
+/* Industry Grid */
+.industries {
+    padding: 6rem 4rem;
+}
+
+.industries h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.industry-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.industry-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+}
+
+.industry-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.industry-card i {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.industry-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.industry-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.industry-card p {
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Ecosystem Section */
+.ecosystem {
+    padding: 6rem 4rem;
+    background: linear-gradient(45deg, rgba(0, 240, 255, 0.1), rgba(255, 51, 102, 0.1));
+}
+
+.ecosystem h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.ecosystem-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.ecosystem-feature {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    padding: 4rem 4rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.1); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.1; }
+}
+
+/* Button Styles */
+.cta-button {
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    border: none;
+    padding: 1rem 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .industries, .ecosystem {
+        padding: 4rem 2rem;
+    }
+}
+
+/* Introduction Section Styling */
+.introduction {
+    padding: 6rem 4rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.intro-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    color: var(--accent-color);
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ecosystem-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.brain-graphic {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.overview-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--accent-color);
+}
+
+/* Key Highlights Section */
+.key-highlights {
+    padding: 6rem 4rem;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(255, 51, 102, 0.05));
+}
+
+.key-highlights .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2.5rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.highlight-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight-card p {
+    color: var(--accent-color);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* CTA Group Styling */
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button.primary {
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.cta-button.tertiary {
+    background: transparent;
+    border: 2px solid var(--secondary-accent);
+    color: var(--secondary-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ecosystem-overview {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .brain-graphic {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .intro-text {
+        font-size: 1.2rem;
+    }
+    
+    .highlight-card {
+        padding: 2rem;
+    }
+}
+
+/* Add a logo class for when the logo is ready */
+.logo img {
+    height: 100px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+}
+
+/* Impact Section Styling */
+.impact {
+    padding: 6rem 4rem;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(255, 51, 102, 0.05));
+}
+
+.impact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.impact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+}
+
+.impact-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.impact-content p {
+    color: var(--accent-color);
+    line-height: 1.8;
+    font-size: 1.2rem;
+}
+
+/* Final CTA Section Styling */
+.final-cta {
+    padding: 8rem 4rem;
+    background: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.final-cta h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.final-cta p {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments for Impact and Final CTA */
+@media (max-width: 768px) {
+    .impact, .final-cta {
+        padding: 4rem 2rem;
+    }
+    
+    .impact h2, .final-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .impact-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .impact-content p, .final-cta p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive adjustments for industry cards */
+@media (max-width: 768px) {
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-card {
+        padding: 2rem;
+    }
+
+    .industry-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .industry-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .industry-card p {
+        font-size: 1rem;
+    }
+}
+
+/* Base responsive adjustments */
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .intro-text {
+        font-size: 1.2rem;
+    }
+    
+    .ecosystem-overview {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .industries {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-links {
+        display: none; /* Will need JavaScript for mobile menu */
+    }
+    
+    .logo img {
+        height: 60px; /* Smaller logo for mobile */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .key-highlights .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .industry-card {
+        padding: 1.5rem;
+    }
+    
+    .industry-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .impact h2, .final-cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .footer-section {
+        padding: 1rem;
+    }
+}
+
+/* Add hamburger menu for mobile */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem;
+    }
+    
+    .nav-links.active a {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        text-align: center;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (hover: none) {
+    .nav-links a,
+    .cta-button,
+    .social-links a {
+        padding: 0.8rem;
+    }
+    
+    .industry-card,
+    .highlight-card {
+        cursor: pointer;
+    }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Optimize images for different screen sizes */
+@media (max-width: 768px) {
+    .brain-graphic {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Improve form elements for mobile */
+@media (max-width: 768px) {
+    input,
+    textarea,
+    select,
+    button {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        max-width: 100%;
+    }
+}
